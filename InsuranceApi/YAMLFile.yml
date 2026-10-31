@@ -1,0 +1,24 @@
+﻿
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 9.0
+
+  pre_build:
+    commands:
+      - echo Restoring NuGet packages...
+      - dotnet restore InsuranceApi.sln
+
+  build:
+    commands:
+      - echo Building .NET application...
+      - dotnet build InsuranceApi.sln --configuration Release --no-restore
+      - echo Publishing application...
+      - dotnet publish ./InsuranceApi/InsuranceApi.csproj -c Release -o publish
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: publish

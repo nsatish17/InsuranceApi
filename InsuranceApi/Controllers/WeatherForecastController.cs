@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceApi.Controllers
 {
-    [ApiController]
+   [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController :ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
